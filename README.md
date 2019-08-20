@@ -1,4 +1,4 @@
-# AppAugust13
+# Angular 8 Sample Code
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
