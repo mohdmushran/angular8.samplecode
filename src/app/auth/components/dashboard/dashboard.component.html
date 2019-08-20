@@ -1,0 +1,64 @@
+<h3 align="center" class="title">Dashboard Page</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <app-side-bar></app-side-bar>
+        </div>
+        <div class="col-md-5">
+            <form [formGroup]="mobileForm" (ngSubmit)="mobileDetails(mobileForm.value)">
+                <!-- <div class="text-center mb-4">
+            <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt=""
+                            width="72" height="72">
+                        <h1 class="h3 mb-3 font-weight-normal">Registration Form</h1>
+        </div> -->
+
+                <ngb-alert [type]="alertClass" (close)="alertMsg = ''" *ngIf="alertMsg" [innerHTML]="alertMsg">
+                </ngb-alert>
+
+                <div class="form-group">
+                    <label for="brand">Brand</label>
+                    <input type="text" id="brand" class="form-control" formControlName="brand" placeholder="Brand"
+                        required autofocus>
+                    <div *ngIf="mobileForm.controls?.brand?.dirty && mobileForm.controls?.brand?.errors?.required"
+                        class="field_error">
+                        Brand is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="model">Model</label>
+                    <input type="text" id="model" class="form-control" formControlName="model" placeholder="Model"
+                        required>
+                    <div *ngIf="mobileForm.controls?.model?.dirty && mobileForm.controls?.model?.errors?.required"
+                        class="field_error">
+                        Model Is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" class="form-control" formControlName="price" placeholder="Price"
+                        required>
+                    <div *ngIf="mobileForm.controls?.price?.dirty && mobileForm.controls?.price?.errors?.required"
+                        class="field_error">
+                        Price is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" class="form-control" formControlName="description"
+                        placeholder="Description" required>
+                    <div *ngIf="mobileForm.controls?.description?.dirty && mobileForm.controls?.description?.errors?.required"
+                        class="field_error">
+                        Description is required.
+                    </div>
+                </div>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+                <p class="mt-5 mb-3 text-muted text-center">&copy; 2019-2020</p>
+            </form>
+        </div>
+    </div>
+</div>

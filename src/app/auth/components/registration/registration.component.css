@@ -1,0 +1,6 @@
+.text-center.mb-4 {
+    padding-top: 50px;
+}
+.field_error {
+    color: red;
+}
